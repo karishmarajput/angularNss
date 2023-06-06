@@ -1,0 +1,26 @@
+{
+    "data":{
+        "events":[{
+            "id":"1",
+            "name":"abc",
+            "eventDate":"12/05/23",
+            "imagePath":"/assets/randomImage.jpg",
+            "content":"ghast tastusa tasctua atjyyau"
+        },
+        {
+            "id":"2",
+            "name":"abcdea",
+            "eventDate":"10/05/23",
+            "imagePath":"/assets/randomImage.jpg",
+            "content":"ghast tastusa tasctua atjyyau"
+        },
+        {
+            "id":"3",
+            "name":"qwku",
+            "eventDate":"2/05/23",
+            "imagePath":"/assets/randomImage.jpg",
+            "content":"ghast tastusa tasctua atjyyau"
+        }
+    ]
+    }
+}
