@@ -10,6 +10,7 @@ import {MaterialModule} from './material.module';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './admin/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
@@ -29,7 +30,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     MaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
  exports: [RouterModule],
   providers: [],
