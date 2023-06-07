@@ -1,0 +1,13 @@
+<h2>Add Event</h2>
+<div class="addEventDiv">
+    <form class="addEventForm" [formGroup]="addEventForm" (ngSubmit)="onSubmit(addEventForm.value.eventName, addEventForm.value.eventDate, addEventForm.value.venue, addEventForm.value.noOfBeneficiar, addEventForm.value.content, imagePath?.files?.[0])">
+        <input type="text" placeholder="Event Name" formControlName="eventName">
+        <input type="date" placeholder="Event Date" formControlName="eventDate">
+        <input type="text" placeholder="Venue" formControlName="venue">
+        <input type="text" placeholder="No. of Beneficiaries" formControlName="noOfBeneficiar">
+        <textarea placeholder="Content" formControlName="content"></textarea>
+        <input type="file" #imagePath>
+        <button type="submit">Create Event</button>
+      </form>
+      
+</div>

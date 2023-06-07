@@ -1,0 +1,24 @@
+.addEventDiv{
+    display: flex;
+    justify-content: center;
+    
+
+}
+h2{
+    text-align: center;
+    padding: 1rem;
+}
+.addEventForm{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+   
+}
+.addEventForm mat-form-field{
+    width: 100%;
+}
+.inputImage{
+    padding: 1rem;
+}

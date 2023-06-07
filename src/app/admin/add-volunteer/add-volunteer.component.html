@@ -1,0 +1,18 @@
+<h2>Add Volunteer</h2>
+<div>
+    <form (ngSubmit)="onSubmit(vec.value,name.value,dob.value)">
+        <mat-form-field>
+            <mat-label>Vec</mat-label>
+            <input #vec matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input #name matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>DOB</mat-label>
+            <input #dob type="date" matInput>
+          </mat-form-field>
+          <button mat-raised-button type="submit" color="primary">Add Volunteer</button>
+    </form>
+</div>

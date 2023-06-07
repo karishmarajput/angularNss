@@ -12,10 +12,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './admin/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { AddVolunteerComponent } from './admin/add-volunteer/add-volunteer.component';
+import { DisplayVolunteerComponent } from './admin/display-volunteer/display-volunteer.component';
+import { DisplayEventComponent } from './admin/display-event/display-event.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'adminDashboard', component: DashboardComponent }
+  { path: 'adminDashboard', component: DashboardComponent },
+  { path: 'adminDashboard/addEvent', component: AddEventComponent },
+  { path: 'adminDashboard/addVolunteer', component: AddVolunteerComponent },
+  { path: 'adminDashboard/displayVolunteer', component: DisplayVolunteerComponent },
+  { path: 'adminDashboard/displayEvents', component: DisplayEventComponent }
  ];
 @NgModule({
   declarations: [
@@ -24,7 +32,11 @@ const routes: Routes = [
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddEventComponent,
+    AddVolunteerComponent,
+    DisplayVolunteerComponent,
+    DisplayEventComponent
   ],
   imports: [
     BrowserModule,
