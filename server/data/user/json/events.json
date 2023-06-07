@@ -5,21 +5,24 @@
             "name":"abc",
             "eventDate":"12/05/23",
             "imagePath":"/assets/randomImage.jpg",
-            "content":"ghast tastusa tasctua atjyyau"
+            "content":"ghast tastusa tasctua atjyyau",
+            "noOfBenificiar":90
         },
         {
             "id":"2",
             "name":"abcdea",
             "eventDate":"10/05/23",
             "imagePath":"/assets/randomImage.jpg",
-            "content":"ghast tastusa tasctua atjyyau"
+            "content":"ghast tastusa tasctua atjyyau",
+            "noOfBenificiar":90
         },
         {
             "id":"3",
             "name":"qwku",
             "eventDate":"2/05/23",
             "imagePath":"/assets/randomImage.jpg",
-            "content":"ghast tastusa tasctua atjyyau"
+            "content":"ghast tastusa tasctua atjyyau",
+            "noOfBenificiar":100
         }
     ]
     }

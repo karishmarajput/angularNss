@@ -1,0 +1,41 @@
+.showNumbers{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  .showNumber{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: .2rem;
+    font-weight: 400;
+    width: 22rem;
+    height: 9rem;
+    box-shadow: 1px 3px #332C6F;
+    margin: 1rem;
+  }
+  #numberOfVolunteer{
+    background-image: radial-gradient(
+      farthest-corner at 40px 40px,
+      #a097f1 0%,
+      #332C6F 100%
+    );
+  }
+  #numberOfEvents{
+    background-image: radial-gradient(
+      farthest-corner at 40px 40px,
+      rgb(5, 243, 223) 0%,
+      #43e 100%
+    );
+  }
+  #numberOfBenificiar{
+    background-image: radial-gradient(
+      farthest-corner at 40px 40px,
+      rgb(247, 218, 139) 0%,
+      #f58d06 100%
+    );
+  }

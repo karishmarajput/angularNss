@@ -1,14 +1,14 @@
 <div class="formContainer">
     <h1>Admin Login</h1>
-<form [formGroup]="adminForm" (ngSubmit) = "onSubmit()">
+<form [formGroup]="adminForm" (ngSubmit) = "onSubmit(username.value, password.value)">
     <mat-form-field class="formField">
         
         <mat-label>User Name</mat-label>
-        <input matInput name="userName">
+        <input #username matInput name="userName">
       </mat-form-field><br>
       <mat-form-field class="formField">
         <mat-label>Enter your password</mat-label>
-        <input class="password" matInput [type]="hide ? 'password' : 'text'">
+        <input #password name="password"class="password" matInput [type]="hide ? 'password' : 'text'">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>

@@ -11,10 +11,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './admin/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
-  // { path: 'contactus', component: ContactUsComponent }
+  { path: 'adminDashboard', component: DashboardComponent }
  ];
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ const routes: Routes = [
     AdminComponent,
     NavbarComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
