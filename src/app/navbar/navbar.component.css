@@ -3,7 +3,7 @@
     margin: 0px;
 }
 .navbar{
-    background-color: rgba(239, 231, 231, 0.715);
+    background-color: #F8F9FA;
     width: 100%;
     display: flex;
     justify-content: space-between;

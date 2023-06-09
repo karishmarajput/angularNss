@@ -16,6 +16,7 @@ import { AddEventComponent } from './add-event/add-event.component';
 import { AddVolunteerComponent } from './admin/add-volunteer/add-volunteer.component';
 import { DisplayVolunteerComponent } from './admin/display-volunteer/display-volunteer.component';
 import { DisplayEventComponent } from './admin/display-event/display-event.component';
+import { FooterComponent } from './footer/footer.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
@@ -37,6 +38,7 @@ const routes: Routes = [
     AddVolunteerComponent,
     DisplayVolunteerComponent,
     DisplayEventComponent,
+    FooterComponent,
   
   ],
   imports: [

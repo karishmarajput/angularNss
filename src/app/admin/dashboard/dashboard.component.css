@@ -44,7 +44,7 @@
   width: 100%;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   
 }
 .showLinkDiv{
@@ -57,4 +57,11 @@
   color: white;
   font-size: 1.25rem;
   text-decoration: none;
+}
+.stats{
+  background-image: url('/assets/stats.jpeg');
+  padding: 1rem;
+  width: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%; 
 }
