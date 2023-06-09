@@ -39,3 +39,22 @@
       #f58d06 100%
     );
   }
+
+.showLink{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  
+}
+.showLinkDiv{
+  background-color: #332C6F;
+  color: white;
+  padding: 3rem;
+  box-shadow: 1px 3px #15122d;
+}
+.showLinkDiv a{
+  color: white;
+  font-size: 1.25rem;
+  text-decoration: none;
+}

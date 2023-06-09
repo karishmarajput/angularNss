@@ -1,13 +1,54 @@
 <h2>Add Event</h2>
 <div class="addEventDiv">
     <form class="addEventForm" [formGroup]="addEventForm" (ngSubmit)="onSubmit(addEventForm.value.eventName, addEventForm.value.eventDate, addEventForm.value.venue, addEventForm.value.noOfBeneficiar, addEventForm.value.content, imagePath?.files?.[0])">
-        <input type="text" placeholder="Event Name" formControlName="eventName">
-        <input type="date" placeholder="Event Date" formControlName="eventDate">
-        <input type="text" placeholder="Venue" formControlName="venue">
-        <input type="text" placeholder="No. of Beneficiaries" formControlName="noOfBeneficiar">
-        <textarea placeholder="Content" formControlName="content"></textarea>
-        <input type="file" #imagePath>
-        <button type="submit">Create Event</button>
+      <mat-form-field>
+        <mat-label>Event Name</mat-label>
+        <input formControlName="eventName" matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Event Date</mat-label>
+        <input formControlName="eventDate" matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Venue</mat-label>
+        <input formControlName="venue" matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>No. of Beneficiaries</mat-label>
+        <input formControlName="noOfBeneficiar" matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Content</mat-label>
+        <textarea matInput formControlName="content"></textarea>
+      </mat-form-field>
+      <div>
+        <h2>Participants</h2>
+        <table  class="table" border="1px">
+          <thead>
+            <th>Select</th>
+              <th>VEC</th>
+              <th>Name</th>
+              <th>DOB</th>
+          </thead>
+          <tbody>
+              <tr *ngFor="let user of volunteer">
+                <td><input type="checkbox" [checked]="isSelected(user)" (change)="toggleSelection(user)"></td>
+                  <td>{{user.vec}}</td>
+                  <td>{{user.name}}</td>
+                  <td>{{user.DOB}}</td>
+              </tr>
+          </tbody>
+      </table>
+      <div>
+        <h4>Selected Users:</h4>
+        <ul>
+          <li *ngFor="let user of selectedUsers">{{ user.name }}</li>
+        </ul>
+      </div>
+      </div>
+      <input type="file" #imagePath class="inputImage">
+      <button type="submit" mat-raised-button color="primary">Create Event</button>
+
       </form>
       
 </div>

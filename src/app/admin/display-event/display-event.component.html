@@ -1,15 +1,17 @@
-<p>Events List</p>
-<table border="1px">
-    <thead>
-        <th>Name</th>
-        <th>Date</th>
-        <th>No of Benificiar</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let event of events">
-            <td>{{event.name}}</td>
-            <td>{{event.eventDate}}</td>
-            <td>{{event.noOfBenificiar}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="eventListDiv">
+    <h2>Events List</h2>
+    <table class="table" border="1px">
+        <thead>
+            <th>Name</th>
+            <th>Date</th>
+            <th>No of Benificiar</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of events">
+                <td>{{event.name}}</td>
+                <td>{{event.eventDate}}</td>
+                <td>{{event.noOfBenificiar}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,11 @@
+.volunteerForm{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+}
+.addVolunteerDiv{
+    text-align: center;
+    padding: 1rem;
+}

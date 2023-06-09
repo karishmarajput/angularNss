@@ -36,7 +36,8 @@ const routes: Routes = [
     AddEventComponent,
     AddVolunteerComponent,
     DisplayVolunteerComponent,
-    DisplayEventComponent
+    DisplayEventComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -46,7 +47,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
  exports: [RouterModule],
   providers: [],

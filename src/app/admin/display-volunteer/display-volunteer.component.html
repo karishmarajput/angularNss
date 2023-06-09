@@ -1,15 +1,17 @@
-<p>Volunteer List</p>
-<table border="1px">
-    <thead>
-        <th>VEC</th>
-        <th>Name</th>
-        <th>DOB</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of volunteer">
-            <td>{{user.vec}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.DOB}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="volunteerListDiv">
+    <h2>Volunteer List</h2>
+    <table  class="table" border="1px">
+        <thead>
+            <th>VEC</th>
+            <th>Name</th>
+            <th>DOB</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of volunteer">
+                <td>{{user.vec}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.DOB}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

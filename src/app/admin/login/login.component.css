@@ -16,3 +16,12 @@
 .formContainer form{
     text-align: center;
 }
+.imageDiv{
+    background-image: url('/assets/admin.jpg');
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%; 
+}
+.formDiv{
+    display: flex;
+}

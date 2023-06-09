@@ -1,6 +1,7 @@
-<h2>Add Volunteer</h2>
-<div>
-    <form (ngSubmit)="onSubmit(vec.value,name.value,dob.value)">
+
+<div class="addVolunteerDiv">
+  <h2>Add Volunteer</h2>
+    <form class="volunteerForm" (ngSubmit)="onSubmit(vec.value,name.value,dob.value)">
         <mat-form-field>
             <mat-label>Vec</mat-label>
             <input #vec matInput>

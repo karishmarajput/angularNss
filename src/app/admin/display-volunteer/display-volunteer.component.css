@@ -1,0 +1,14 @@
+.table{
+    width: 95%;
+    border: 1px solid black;
+    margin: 1.5rem;
+    text-align: center;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+.volunteerListDiv{
+    text-align: center;
+    padding: 1rem;
+}
