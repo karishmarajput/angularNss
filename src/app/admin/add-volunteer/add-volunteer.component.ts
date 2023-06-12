@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder,ReactiveFormsModule,FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -8,15 +8,28 @@ import { Router } from '@angular/router';
   templateUrl: './add-volunteer.component.html',
   styleUrls: ['./add-volunteer.component.css']
 })
-export class AddVolunteerComponent {
+export class AddVolunteerComponent implements OnInit{
+  volunteerForm!: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router
   ) {}
-  onSubmit(vec:string,name:string,dob:string){
-    let data={vec:vec,name:name,dob:dob}
-    this.http.post('http://localhost:3000/api/admin/addVolunteer', data).subscribe(
+  ngOnInit() {
+    this.volunteerForm = this.formBuilder.group({
+      vec: ['', Validators.required],
+      name: ['', Validators.required],
+      dob: ['', Validators.required]
+    });
+  }
+  onSubmit(){
+    if (this.volunteerForm.valid) {
+      const volunteer = {
+        vec: this.volunteerForm.value['vec'],
+        name: this.volunteerForm.value['name'],
+        dob: this.volunteerForm.value['dob']
+      };
+    this.http.post('http://localhost:3000/api/admin/addVolunteer', volunteer).subscribe(
       (response: any) => {
         if (response.success) {
           console.log('Event Added Successfully');
@@ -30,5 +43,7 @@ export class AddVolunteerComponent {
       }
   
   )
+  this.volunteerForm.reset();
   }
+}
 }

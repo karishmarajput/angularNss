@@ -1,17 +1,21 @@
 <div class="volunteerListDiv">
     <h2>Volunteer List</h2>
-    <table  class="table" border="1px">
-        <thead>
-            <th>VEC</th>
-            <th>Name</th>
-            <th>DOB</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of volunteer">
-                <td>{{user.vec}}</td>
-                <td>{{user.name}}</td>
-                <td>{{user.DOB}}</td>
-            </tr>
-        </tbody>
+    <table mat-table [dataSource]="volunteer" class="mat-elevation-z8">
+      <ng-container matColumnDef="vec">
+        <th mat-header-cell *matHeaderCellDef>VEC</th>
+        <td mat-cell *matCellDef="let user">{{ user.vec }}</td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="dob">
+        <th mat-header-cell *matHeaderCellDef>DOB</th>
+        <td mat-cell *matCellDef="let user">{{ user.DOB }}</td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="['vec', 'name', 'dob']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['vec', 'name', 'dob']"></tr>
     </table>
-</div>
+  </div>
+  

@@ -1,26 +1,41 @@
-<h2>Add Event</h2>
 <div class="addEventDiv">
-    <form class="addEventForm" [formGroup]="addEventForm" (ngSubmit)="onSubmit(addEventForm.value.eventName, addEventForm.value.eventDate, addEventForm.value.venue, addEventForm.value.noOfBeneficiar, addEventForm.value.content, imagePath?.files?.[0])">
-      <mat-form-field>
-        <mat-label>Event Name</mat-label>
-        <input formControlName="eventName" matInput>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Event Date</mat-label>
-        <input formControlName="eventDate" matInput>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Venue</mat-label>
-        <input formControlName="venue" matInput>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>No. of Beneficiaries</mat-label>
-        <input formControlName="noOfBeneficiar" matInput>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Content</mat-label>
-        <textarea matInput formControlName="content"></textarea>
-      </mat-form-field>
+  <h2>Add Event</h2>
+  <form class="addEventForm" [formGroup]="addEventForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Event Name</mat-label>
+      <input formControlName="eventName" matInput>
+      <mat-error *ngIf="addEventForm.controls['eventName'].invalid && addEventForm.controls['eventName'].touched">
+        Please enter a valid Event Name.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Event Date</mat-label>
+      <input type="date" formControlName="eventDate" matInput>
+      <mat-error *ngIf="addEventForm.controls['eventDate'].invalid && addEventForm.controls['eventDate'].touched">
+        Please enter a valid Event Date.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Venue</mat-label>
+      <input formControlName="venue" matInput>
+      <mat-error *ngIf="addEventForm.controls['venue'].invalid && addEventForm.controls['venue'].touched">
+        Please enter a valid venue.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>No. of Beneficiaries</mat-label>
+      <input type="number" formControlName="noOfBeneficiar" matInput>
+      <mat-error *ngIf="addEventForm.controls['noOfBeneficiar'].invalid && addEventForm.controls['noOfBeneficiar'].touched">
+        Please enter a valid Number.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Content</mat-label>
+      <textarea matInput formControlName="content"></textarea>
+      <mat-error *ngIf="addEventForm.controls['content'].invalid && addEventForm.controls['content'].touched">
+        Please enter a valid content.
+      </mat-error>
+    </mat-form-field>
       <div>
         <h2>Participants</h2>
         <table  class="table" border="1px">
@@ -32,7 +47,7 @@
           </thead>
           <tbody>
               <tr *ngFor="let user of volunteer">
-                <td><input type="checkbox" [checked]="isSelected(user)" (change)="toggleSelection(user)"></td>
+                <td><input  type="checkbox" [checked]="isSelected(user)" (change)="toggleSelection(user)"></td>
                   <td>{{user.vec}}</td>
                   <td>{{user.name}}</td>
                   <td>{{user.DOB}}</td>
@@ -46,7 +61,11 @@
         </ul>
       </div>
       </div>
-      <input type="file" #imagePath class="inputImage">
+
+      <input type="file" formControlName="imagePath" #imagePath class="inputImage">
+      <mat-error *ngIf="addEventForm.controls['imagePath'].invalid && addEventForm.controls['imagePath'].touched">
+        Please enter a valid imagePath.
+      </mat-error>
       <button type="submit" mat-raised-button color="primary">Create Event</button>
 
       </form>

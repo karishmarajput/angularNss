@@ -1,19 +1,27 @@
-
 <div class="addVolunteerDiv">
   <h2>Add Volunteer</h2>
-    <form class="volunteerForm" (ngSubmit)="onSubmit(vec.value,name.value,dob.value)">
-        <mat-form-field>
-            <mat-label>Vec</mat-label>
-            <input #vec matInput>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input #name matInput>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>DOB</mat-label>
-            <input #dob type="date" matInput>
-          </mat-form-field>
-          <button mat-raised-button type="submit" color="primary">Add Volunteer</button>
-    </form>
+  <form class="volunteerForm" [formGroup]="volunteerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Vec</mat-label>
+      <input matInput formControlName="vec">
+      <mat-error *ngIf="volunteerForm.controls['vec'].invalid && volunteerForm.controls['vec'].touched">
+        Please enter a valid Vec.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="volunteerForm.controls['name'].invalid && volunteerForm.controls['name'].touched">
+        Please enter a valid Name.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>DOB</mat-label>
+      <input matInput type="date" formControlName="dob">
+      <mat-error *ngIf="volunteerForm.controls['dob'].invalid && volunteerForm.controls['dob'].touched">
+        Please enter a valid DOB.
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Add Volunteer</button>
+  </form>
 </div>
