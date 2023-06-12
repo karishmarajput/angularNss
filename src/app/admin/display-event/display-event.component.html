@@ -1,5 +1,9 @@
 <div class="eventListDiv">
-    <h2>Events List</h2>
+    <div class="tableHeader">
+        <h2>Events List</h2>
+        <button  mat-raised-button color="primary" (click)="goToAddEvent()">Add Event</button>
+    </div>
+
     <table mat-table [dataSource]="events" class="mat-elevation-z8">
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>

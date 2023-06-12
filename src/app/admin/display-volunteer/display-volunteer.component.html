@@ -1,5 +1,9 @@
 <div class="volunteerListDiv">
-    <h2>Volunteer List</h2>
+    <div class="tableHeader">
+        <h2>Volunteer List</h2>
+        <button mat-raised-button color="primary" (click)="goToAddVolunteer()">Add Volunteer</button>
+    </div>
+
     <table mat-table [dataSource]="volunteer" class="mat-elevation-z8">
       <ng-container matColumnDef="vec">
         <th mat-header-cell *matHeaderCellDef>VEC</th>

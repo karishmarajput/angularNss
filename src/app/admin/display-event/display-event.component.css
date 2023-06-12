@@ -12,3 +12,8 @@ th, td {
     text-align: center;
     padding: 1rem;
 }
+.tableHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}

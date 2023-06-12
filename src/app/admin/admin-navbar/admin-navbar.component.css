@@ -1,0 +1,37 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.navbar{
+    background-color: #F8F9FA;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    padding: .25rem .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.logo p{
+    padding: 1rem;
+}
+.headerData{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: .5rem;
+}
+.headerData div{
+    padding: .5rem;
+}

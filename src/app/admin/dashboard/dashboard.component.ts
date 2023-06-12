@@ -10,6 +10,7 @@ export class DashboardComponent implements OnInit{
   eventCount: number = 0;
   volunteerCount: number = 0;
   benificiarCount: number = 0;
+  isAdminSection: boolean = true;
 
   constructor(private http: HttpClient) {}
   ngOnInit() {

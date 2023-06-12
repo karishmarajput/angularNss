@@ -7,11 +7,18 @@
         <div>
             <a routerLink="/">Home</a>
         </div>
-        <div>
-            <a routerLink="/admin">Admin</a>
-        </div>
-        <!-- <div>
-            <a routerLink="/user">User</a>
-        </div> -->
+        <ng-container *ngIf="isAdminSection">
+            <div>
+                <a routerLink="adminDashboard/displayEvents">Events</a>
+            </div>
+            <div>
+                <a routerLink="adminDashboard/displayVolunteer">Volunteer</a>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!isAdminSection">
+            <div>
+                <a routerLink="/admin">Admin</a>
+            </div>
+          </ng-container>
     </div>
 </div>

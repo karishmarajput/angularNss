@@ -17,10 +17,11 @@ import { AddVolunteerComponent } from './admin/add-volunteer/add-volunteer.compo
 import { DisplayVolunteerComponent } from './admin/display-volunteer/display-volunteer.component';
 import { DisplayEventComponent } from './admin/display-event/display-event.component';
 import { FooterComponent } from './footer/footer.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'adminDashboard', component: DashboardComponent },
+  { path: 'adminDashboard', component: DashboardComponent, },
   { path: 'adminDashboard/addEvent', component: AddEventComponent },
   { path: 'adminDashboard/addVolunteer', component: AddVolunteerComponent },
   { path: 'adminDashboard/displayVolunteer', component: DisplayVolunteerComponent },
