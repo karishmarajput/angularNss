@@ -36,26 +36,34 @@
         Please enter a valid content.
       </mat-error>
     </mat-form-field>
-      <div>
+      <div class="participantTable">
         <h2>Participants</h2>
-        <table  class="table" border="1px">
-          <thead>
-            <th>Select</th>
-              <th>VEC</th>
-              <th>Name</th>
-              <th>DOB</th>
-          </thead>
-          <tbody>
-              <tr *ngFor="let user of volunteer">
-                <td><input  type="checkbox" [checked]="isSelected(user)" (change)="toggleSelection(user)"></td>
-                  <td>{{user.vec}}</td>
-                  <td>{{user.name}}</td>
-                  <td>{{user.DOB}}</td>
-              </tr>
-          </tbody>
-      </table>
+        <mat-table [dataSource]="paginatedVolunteers" class="mat-elevation-z8 ">
+          <ng-container matColumnDef="select">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let user">
+              <mat-checkbox [checked]="isSelected(user)" (change)="toggleSelection(user)"></mat-checkbox>
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="vec">
+            <mat-header-cell *matHeaderCellDef>VEC</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{ user.vec }}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{ user.name }}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="dob">
+            <mat-header-cell *matHeaderCellDef>DOB</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{ user.DOB }}</mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="['select', 'vec', 'name', 'dob']"></mat-header-row>
+          <mat-row *matRowDef="let user; columns: ['select', 'vec', 'name', 'dob']"></mat-row>
+        </mat-table>
+        
+      <mat-paginator  [length]="volunteer.length" [pageSize]="pageSize" (page)="onPageChange($event)"></mat-paginator>
       <div>
-        <h4>Selected Users:</h4>
+        <h4>Selected Volunteers:</h4>
         <ul>
           <li *ngFor="let user of selectedUsers">{{ user.name }}</li>
         </ul>

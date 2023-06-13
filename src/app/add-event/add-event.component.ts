@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-add-event',
@@ -12,6 +13,10 @@ import { FormControl } from '@angular/forms';
 export class AddEventComponent implements OnInit {
   addEventForm!: FormGroup;
   volunteer!: any[];
+  selectedUsers: any[] = [];
+  pageSize = 10;
+  currentPage = 0;
+  paginatedVolunteers: any[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,6 +35,7 @@ export class AddEventComponent implements OnInit {
       imagePath: ['', Validators.required]
     });
   }
+
   formDataContent: string = '';
   displayFormDataContent(formData: FormData) {
     this.formDataContent = '';
@@ -39,7 +45,6 @@ export class AddEventComponent implements OnInit {
     });
     console.log(this.formDataContent)
   }
-  selectedUsers: any[] = [];
 
   toggleSelection(user: any) {
     const index = this.selectedUsers.findIndex(
@@ -65,6 +70,7 @@ export class AddEventComponent implements OnInit {
       .subscribe(
         (response: any) => {
           this.volunteer = response.data.volunteers;
+          this.paginateVolunteers();
         },
         (error: any) => {
           console.log('Error: ', error);
@@ -74,12 +80,11 @@ export class AddEventComponent implements OnInit {
 
   onSubmit() {
     const selectedUserIds = this.selectedUsers.map((user) => user.vec);
-    console.log(selectedUserIds.length == 0)
-    if (this.addEventForm.invalid || selectedUserIds.length == 0|| this.addEventForm.value.imagePath=='') {
+
+    if (this.addEventForm.invalid || selectedUserIds.length === 0 || this.addEventForm.value.imagePath === '') {
       return;
     }
 
-    console.log('submit')
     const formData = new FormData();
     formData.append('eventName', this.addEventForm.value.eventName);
     formData.append('eventDate', this.addEventForm.value.eventDate);
@@ -88,11 +93,10 @@ export class AddEventComponent implements OnInit {
     formData.append('content', this.addEventForm.value.content);
     formData.append('image', this.addEventForm.value.imagePath);
 
-   
     for (const userId of selectedUserIds) {
       formData.append('selectedUserIds', userId.toString());
     }
-    console.log(this.addEventForm.value)
+
     this.displayFormDataContent(formData);
     this.http
       .post('http://localhost:3000/api/admin/addEvent', formData)
@@ -109,5 +113,16 @@ export class AddEventComponent implements OnInit {
           console.log('An error occurred during event creation:', error);
         }
       );
+  }
+
+  onPageChange(event: PageEvent): void {
+    this.currentPage = event.pageIndex;
+    this.paginateVolunteers();
+  }
+
+  paginateVolunteers(): void {
+    const startIndex = this.currentPage * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    this.paginatedVolunteers = this.volunteer.slice(startIndex, endIndex);
   }
 }

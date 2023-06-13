@@ -35,3 +35,8 @@ h2{
 th, td {
     padding: 15px;
 }
+.participantTable{
+    width: 100%;
+    margin: 1rem;
+    margin-bottom: 4rem;
+}
