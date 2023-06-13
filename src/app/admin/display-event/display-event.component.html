@@ -1,24 +1,58 @@
 <div class="eventListDiv">
-    <div class="tableHeader">
-        <h2>Events List</h2>
-        <button  mat-raised-button color="primary" (click)="goToAddEvent()">Add Event</button>
-    </div>
-
-    <table mat-table [dataSource]="events" class="mat-elevation-z8">
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let event">{{ event.name }}</td>
-      </ng-container>
-      <ng-container matColumnDef="eventDate">
-        <th mat-header-cell *matHeaderCellDef>Date</th>
-        <td mat-cell *matCellDef="let event">{{ event.eventDate }}</td>
-      </ng-container>
-      <ng-container matColumnDef="noOfBenificiar">
-        <th mat-header-cell *matHeaderCellDef>No of Beneficiar</th>
-        <td mat-cell *matCellDef="let event">{{ event.noOfBenificiar }}</td>
-      </ng-container>
-      <tr mat-header-row *matHeaderRowDef="['name', 'eventDate', 'noOfBenificiar']"></tr>
-      <tr mat-row *matRowDef="let row; columns: ['name', 'eventDate', 'noOfBenificiar']"></tr>
-    </table>
+  <div class="tableHeader">
+    <h2>Events List</h2>
+    <button mat-raised-button color="primary" (click)="goToAddEvent()">Add Event</button>
   </div>
-  
+
+  <div class="filter-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <mat-select [(ngModel)]="selectedCategory" (selectionChange)="filterEvents()">
+        <mat-option value="">All</mat-option>
+        <mat-option *ngFor="let category of getUniqueCategories()" [value]="category">
+          {{ category }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput [(ngModel)]="searchText" (ngModelChange)="filterEvents()">
+    </mat-form-field>
+    <button mat-icon-button (click)="clearSearch()">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="getPaginatedEvents()" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let event">{{ event.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="eventDate">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let event">{{ event.eventDate }}</td>
+    </ng-container>
+    <ng-container matColumnDef="noOfBeneficiar">
+      <th mat-header-cell *matHeaderCellDef>No of Beneficiar</th>
+      <td mat-cell *matCellDef="let event">{{ event.noOfBeneficiar }}</td>
+    </ng-container>
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef>Category</th>
+      <td mat-cell *matCellDef="let event">{{ event.category }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['name', 'eventDate', 'noOfBeneficiar','category']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'eventDate', 'noOfBeneficiar','category']"></tr>
+  </table>
+
+  <div class="pagination-container">
+    <button mat-icon-button [disabled]="currentPage === 0" (click)="previousPage()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <span class="current-page">{{ currentPage + 1 }}</span>
+    <span class="page-separator">/</span>
+    <span class="total-pages">{{ getTotalPages() }}</span>
+    <button mat-icon-button [disabled]="currentPage === getTotalPages() - 1" (click)="nextPage()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

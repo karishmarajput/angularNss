@@ -1,29 +1,456 @@
 {
-    "data":{
-        "events":[{
-            "id":"1",
-            "name":"abc",
-            "eventDate":"12/05/23",
-            "imagePath":"/assets/randomImage.jpg",
-            "content":"ghast tastusa tasctua atjyyau",
-            "noOfBenificiar":90
+    "data": {
+      "events": [
+        {
+          "id": "1",
+          "name": "Event 1",
+          "eventDate": "2023-06-15",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "category": "Environment",
+          "noOfBeneficiar": 50
         },
         {
-            "id":"2",
-            "name":"abcdea",
-            "eventDate":"10/05/23",
-            "imagePath":"/assets/randomImage.jpg",
-            "content":"ghast tastusa tasctua atjyyau",
-            "noOfBenificiar":90
+          "id": "2",
+          "name": "Event 2",
+          "eventDate": "2023-06-16",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "category": "Education",
+          "noOfBeneficiar": 80
         },
         {
-            "id":"3",
-            "name":"qwku",
-            "eventDate":"2/05/23",
-            "imagePath":"/assets/randomImage.jpg",
-            "content":"ghast tastusa tasctua atjyyau",
-            "noOfBenificiar":100
+          "id": "3",
+          "name": "Event 3",
+          "eventDate": "2023-06-17",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          "category": "Animal",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "4",
+          "name": "Event 4",
+          "eventDate": "2023-06-18",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+          "category": "Environment",
+          "noOfBeneficiar": 60
+        },
+        {
+          "id": "5",
+          "name": "Event 5",
+          "eventDate": "2023-06-19",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "category": "Education",
+          "noOfBeneficiar": 90
+        },
+        {
+          "id": "6",
+          "name": "Event 6",
+          "eventDate": "2023-06-20",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "category": "Animal",
+          "noOfBeneficiar": 120
+        },
+        {
+          "id": "7",
+          "name": "Event 7",
+          "eventDate": "2023-06-21",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "category": "Environment",
+          "noOfBeneficiar": 40
+        },
+        {
+          "id": "8",
+          "name": "Event 8",
+          "eventDate": "2023-06-22",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "category": "Education",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "9",
+          "name": "Event 9",
+          "eventDate": "2023-06-23",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          "category": "Animal",
+          "noOfBeneficiar": 100
+        },
+        {
+          "id": "10",
+          "name": "Event 10",
+          "eventDate": "2023-06-24",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+          "category": "Environment",
+          "noOfBeneficiar": 50
+        },
+        {
+          "id": "11",
+          "name": "Event 11",
+          "eventDate": "2023-06-25",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "category": "Education",
+          "noOfBeneficiar": 80
+        },
+        {
+          "id": "12",
+          "name": "Event 12",
+          "eventDate": "2023-06-26",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "category": "Animal",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "13",
+          "name": "Event 13",
+          "eventDate": "2023-06-27",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "category": "Environment",
+          "noOfBeneficiar": 60
+        },
+        {
+          "id": "14",
+          "name": "Event 14",
+          "eventDate": "2023-06-28",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "category": "Education",
+          "noOfBeneficiar": 90
+        },
+        {
+          "id": "15",
+          "name": "Event 15",
+          "eventDate": "2023-06-29",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          "category": "Animal",
+          "noOfBeneficiar": 120
+        },
+        {
+          "id": "16",
+          "name": "Event 16",
+          "eventDate": "2023-06-30",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+          "category": "Environment",
+          "noOfBeneficiar": 40
+        },
+        {
+          "id": "17",
+          "name": "Event 17",
+          "eventDate": "2023-07-01",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "category": "Education",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "18",
+          "name": "Event 18",
+          "eventDate": "2023-07-02",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "category": "Animal",
+          "noOfBeneficiar": 100
+        },
+        {
+          "id": "19",
+          "name": "Event 19",
+          "eventDate": "2023-07-03",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "category": "Environment",
+          "noOfBeneficiar": 50
+        },
+        {
+          "id": "20",
+          "name": "Event 20",
+          "eventDate": "2023-07-04",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "category": "Education",
+          "noOfBeneficiar": 80
+        },
+        {
+          "id": "21",
+          "name": "Event 21",
+          "eventDate": "2023-07-05",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          "category": "Animal",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "22",
+          "name": "Event 22",
+          "eventDate": "2023-07-06",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+          "category": "Environment",
+          "noOfBeneficiar": 60
+        },
+        {
+          "id": "23",
+          "name": "Event 23",
+          "eventDate": "2023-07-07",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "category": "Education",
+          "noOfBeneficiar": 90
+        },
+        {
+          "id": "24",
+          "name": "Event 24",
+          "eventDate": "2023-07-08",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "category": "Animal",
+          "noOfBeneficiar": 120
+        },
+        {
+          "id": "25",
+          "name": "Event 25",
+          "eventDate": "2023-07-09",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "category": "Environment",
+          "noOfBeneficiar": 40
+        },
+        {
+          "id": "26",
+          "name": "Event 26",
+          "eventDate": "2023-07-10",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "category": "Education",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "27",
+          "name": "Event 27",
+          "eventDate": "2023-07-11",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          "category": "Animal",
+          "noOfBeneficiar": 100
+        },
+        {
+          "id": "28",
+          "name": "Event 28",
+          "eventDate": "2023-07-12",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+          "category": "Environment",
+          "noOfBeneficiar": 50
+        },
+        {
+          "id": "29",
+          "name": "Event 29",
+          "eventDate": "2023-07-13",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "category": "Education",
+          "noOfBeneficiar": 80
+        },
+        {
+          "id": "30",
+          "name": "Event 30",
+          "eventDate": "2023-07-14",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "category": "Animal",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "31",
+          "name": "Event 31",
+          "eventDate": "2023-07-15",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "category": "Environment",
+          "noOfBeneficiar": 60
+        },
+        {
+          "id": "32",
+          "name": "Event 32",
+          "eventDate": "2023-07-16",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "category": "Education",
+          "noOfBeneficiar": 90
+        },
+        {
+          "id": "33",
+          "name": "Event 33",
+          "eventDate": "2023-07-17",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          "category": "Animal",
+          "noOfBeneficiar": 120
+        },
+        {
+          "id": "34",
+          "name": "Event 34",
+          "eventDate": "2023-07-18",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+          "category": "Environment",
+          "noOfBeneficiar": 40
+        },
+        {
+          "id": "35",
+          "name": "Event 35",
+          "eventDate": "2023-07-19",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "category": "Education",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "36",
+          "name": "Event 36",
+          "eventDate": "2023-07-20",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "category": "Animal",
+          "noOfBeneficiar": 100
+        },
+        {
+          "id": "37",
+          "name": "Event 37",
+          "eventDate": "2023-07-21",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "category": "Environment",
+          "noOfBeneficiar": 50
+        },
+        {
+          "id": "38",
+          "name": "Event 38",
+          "eventDate": "2023-07-22",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "category": "Education",
+          "noOfBeneficiar": 80
+        },
+        {
+          "id": "39",
+          "name": "Event 39",
+          "eventDate": "2023-07-23",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          "category": "Animal",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "40",
+          "name": "Event 40",
+          "eventDate": "2023-07-24",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+          "category": "Environment",
+          "noOfBeneficiar": 60
+        },
+        {
+          "id": "41",
+          "name": "Event 41",
+          "eventDate": "2023-07-25",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "category": "Education",
+          "noOfBeneficiar": 90
+        },
+        {
+          "id": "42",
+          "name": "Event 42",
+          "eventDate": "2023-07-26",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "category": "Animal",
+          "noOfBeneficiar": 120
+        },
+        {
+          "id": "43",
+          "name": "Event 43",
+          "eventDate": "2023-07-27",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "category": "Environment",
+          "noOfBeneficiar": 40
+        },
+        {
+          "id": "44",
+          "name": "Event 44",
+          "eventDate": "2023-07-28",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "category": "Education",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "45",
+          "name": "Event 45",
+          "eventDate": "2023-07-29",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+          "category": "Animal",
+          "noOfBeneficiar": 100
+        },
+        {
+          "id": "46",
+          "name": "Event 46",
+          "eventDate": "2023-07-30",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+          "category": "Environment",
+          "noOfBeneficiar": 50
+        },
+        {
+          "id": "47",
+          "name": "Event 47",
+          "eventDate": "2023-07-31",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "category": "Education",
+          "noOfBeneficiar": 80
+        },
+        {
+          "id": "48",
+          "name": "Event 48",
+          "eventDate": "2023-08-01",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+          "category": "Animal",
+          "noOfBeneficiar": 70
+        },
+        {
+          "id": "49",
+          "name": "Event 49",
+          "eventDate": "2023-08-02",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "category": "Environment",
+          "noOfBeneficiar": 60
+        },
+        {
+          "id": "50",
+          "name": "Event 50",
+          "eventDate": "2023-08-03",
+          "imagePath": "/assets/randomImage.jpg",
+          "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+          "category": "Education",
+          "noOfBeneficiar": 90
         }
-    ]
-    }
+      ]
+    }  
 }

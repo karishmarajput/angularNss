@@ -11,9 +11,16 @@ th, td {
 .eventListDiv{
     text-align: center;
     padding: 1rem;
+    padding-bottom: 4rem;
 }
 .tableHeader{
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1rem;
+}
+.pagination button, .search button{
+    margin: 1rem;
+}
+.filter-container mat-form-field{
+    margin: 1rem;
 }

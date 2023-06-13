@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit{
         console.log(response)
         this.eventCount = events.length;
         for(let i =0; i < events.length; i++){
-          this.benificiarCount+= events[i].noOfBenificiar
+          this.benificiarCount+= events[i].noOfBeneficiar
         }
       },
       (error: any) => {
