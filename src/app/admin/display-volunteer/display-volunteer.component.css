@@ -11,9 +11,17 @@ th, td {
 .volunteerListDiv{
     text-align: center;
     padding: 1rem;
+    padding-bottom: 4rem;
 }
 .tableHeader{
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1rem;
+}
+.volunteerTable{
+    width: 95%;
+    margin: 1rem;
+}
+.pagination button{
+    margin: 1rem;
 }
