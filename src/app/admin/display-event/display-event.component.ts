@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { HttpAdminService } from 'src/services/http-admin.service';
 
 interface Event {
   id: string;
@@ -26,7 +27,7 @@ export class DisplayEventComponent implements OnInit {
   searchText = '';
   selectedCategory = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router,private HttpAdminService: HttpAdminService,) {}
 
   ngOnInit() {
     this.getEvents();
@@ -37,7 +38,7 @@ export class DisplayEventComponent implements OnInit {
   }
 
   getEvents() {
-    this.http.get('http://localhost:3000/api/events').subscribe(
+    this.HttpAdminService.getEvents().subscribe(
       (response: any) => {
         this.events = response.data.events;
         this.filteredEvents = this.events.slice();

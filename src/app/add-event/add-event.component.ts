@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { PageEvent } from '@angular/material/paginator';
+import { HttpAdminService } from 'src/services/http-admin.service';
 
 @Component({
   selector: 'app-add-event',
@@ -21,7 +22,8 @@ export class AddEventComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private HttpAdminService: HttpAdminService
   ) {}
 
   ngOnInit() {
@@ -65,8 +67,7 @@ export class AddEventComponent implements OnInit {
   }
 
   getVolunteers() {
-    this.http
-      .get('http://localhost:3000/api/volunteers')
+    this.HttpAdminService.getVolunteers()
       .subscribe(
         (response: any) => {
           this.volunteer = response.data.volunteers;
@@ -98,8 +99,8 @@ export class AddEventComponent implements OnInit {
     }
 
     this.displayFormDataContent(formData);
-    this.http
-      .post('http://localhost:3000/api/admin/addEvent', formData)
+    const authToken = localStorage.getItem('authToken') || '';
+    this.HttpAdminService.addEvent(formData,authToken)
       .subscribe(
         (response: any) => {
           if (response.success) {

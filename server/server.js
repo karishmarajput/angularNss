@@ -1,6 +1,9 @@
 const jsonServer = require('json-server')
 const middleware = jsonServer.defaults();
 const server = jsonServer.create();
+const jwt = require('jsonwebtoken');
+
+const secretKey = 'secret_key';
 
 server.use(middleware);
 server.use(jsonServer.bodyParser);
@@ -17,19 +20,32 @@ server.get('/api/volunteers',(req,res,next)=>{
 })
 server.post('/api/admin/login',(req,res,next)=>{
     const {username,password} = req.body;
-    console.log(username=="admin")
-    console.log(password == "admin")
+    const token = jwt.sign({ username: 'admin' }, secretKey, { expiresIn: '1h' });
     if(username=="admin" && password == "admin"){
-        res.json({ success: true });
+        res.json({ success: true, token: token });
     }else{
         res.status(401).json({ success: false, message: 'Invalid username or password' });
     }
 })
-server.post('/api/admin/addEvent',(req,res,next)=>{
+function verifyToken(req, res, next) {
+    const token = req.headers['authorization'];
+    if (!token) {
+      return res.status(401).json({ error: 'Token not provided' });
+    }
+    jwt.verify(token, secretKey, (err, decoded) => {
+      if (err) {
+        return res.status(401).json({ error: 'Invalid token' });
+      }
+      req.user = decoded;
+      next();
+    });
+  }
+  
+server.post('/api/admin/addEvent',verifyToken,(req,res,next)=>{
     console.log(req.body)
     res.json({ success: true });
 })
-server.post('/api/admin/addVolunteer',(req,res,next)=>{
+server.post('/api/admin/addVolunteer',verifyToken,(req,res,next)=>{
     console.log(req.body)
     res.json({ success: true });
 })

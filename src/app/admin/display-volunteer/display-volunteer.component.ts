@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { HttpAdminService } from 'src/services/http-admin.service';
 
 interface Volunteer {
   id: string;
@@ -21,7 +22,7 @@ export class DisplayVolunteerComponent implements OnInit {
   currentPage = 0;
   searchText = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router,private HttpAdminService: HttpAdminService,) {}
 
   ngOnInit(): void {
     this.getVolunteers();
@@ -32,7 +33,7 @@ export class DisplayVolunteerComponent implements OnInit {
   }
 
   getVolunteers(): void {
-    this.http.get('http://localhost:3000/api/volunteers').subscribe(
+    this.HttpAdminService.getVolunteers().subscribe(
       (response: any) => {
         this.volunteer = response.data.volunteers;
         this.filteredVolunteers = this.volunteer.slice();
