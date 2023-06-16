@@ -21,3 +21,38 @@
     text-align: center;
     height: 10rem;
 }
+.imageTag{
+  background-color: crimson;
+  padding: .35rem;
+  margin: .35rem;
+  color: white;
+  font-weight: 500;
+  border-radius: 1rem;
+  
+}
+.imageDiv{
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: right;
+  line-height: 2.3rem;
+}
+#popularity{
+  background-color: rgb(255, 115, 0);
+}
+.bookNow{
+  padding: 1rem;
+  background-color: red;
+  line-height: 6;
+  
+}
+.matDiv{
+  padding: 0;
+  text-align: left;
+  padding: 0 1rem;
+
+}
+.bookNow a{
+  color: white;
+  font-weight: 500;
+}

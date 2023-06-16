@@ -17,8 +17,8 @@ export class HomeComponent {
 
   getLatestEvents() {
     this.HttpAdminService.getEvents().subscribe((data: any) => {
-      
-        this.events = data.data.events.slice(0, 6);
+      console.log(data.events)
+      this.events = data.events.slice(0, 6);
     });
   }
   

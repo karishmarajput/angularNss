@@ -9,7 +9,7 @@ export class HttpAdminService {
 
   constructor(private http: HttpClient) {}
   getEvents(): Observable<any> {
-    return this.http.get(environment.API_ENDPOINT + 'events')
+    return this.http.get(environment.API_ENDPOINT + 'events?'+'client_id=MzQyODQ4MzZ8MTY4NjcyODkyMi4yMDQ0MjM0')
   }
   getVolunteers(): Observable<any> {
     return this.http.get(environment.API_ENDPOINT + 'volunteers')

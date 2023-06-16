@@ -5,13 +5,19 @@
         <div  *ngFor="let event of events">
             <mat-card class="example-card">
                 <mat-card-header>
-                  <mat-card-title>{{ event.name }}</mat-card-title>
+                  <mat-card-title>{{ event.short_title }}</mat-card-title>
+                  
                 </mat-card-header>
-                <img mat-card-image [src]="event.imagePath" alt="{{ event.name }}">
-                <mat-card-content>
-                  <p>
-                    {{ event.content }}
-                  </p>
+                <div class="imageDiv" style="background-image: url({{event.performers[0].image}});">
+                  <span class="imageTag">
+                    {{event.performers[0].name}}
+                  </span><br>
+                  <span class="imageTag" id="popularity">
+                    {{event.type}}
+                  </span>
+                </div>
+                <mat-card-content class="matDiv">
+                  <span class="bookNow"><a href="{{event.url}}">BOOK NOW</a></span>
                 </mat-card-content>
               </mat-card>
               

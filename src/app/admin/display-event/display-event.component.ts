@@ -74,7 +74,7 @@ export class DisplayEventComponent implements OnInit {
   filterEvents(): void {
     const searchText = this.searchText.toLowerCase().trim();
     const categoryFilter = this.selectedCategory.toLowerCase().trim();
-
+    
     this.filteredEvents = this.events.filter(event => {
       const nameMatches = event.name.toLowerCase().includes(searchText);
       const eventDateMatches = event.eventDate.toLowerCase().includes(searchText);
