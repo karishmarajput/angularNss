@@ -1,0 +1,50 @@
+
+<div class="container">
+    
+    <div class="mainDiv ">
+        <div class="eventDatailsDiv">
+            <h1>{{event.short_title}}</h1>
+            <div class="content">
+                <h3>Type: {{event.type}}</h3>
+                <h3>Reverse Pipe: {{event.type | reverse}}</h3>
+                <h3>Date: {{event.datetime_local| date}}</h3>
+                <h3>Time: {{event.datetime_local | date:'shortTime'}}</h3>
+                <h3>Popularity: {{event.popularity  | percent}}</h3>
+                <h3>Popularity: {{event.score  | percent}}</h3>
+                <h3>Venue: {{event.venue.display_location}}</h3>
+                <a href="{{event.url}}">Book Now</a>
+                
+            </div>
+        </div>
+        <div class="performerDiv">
+            
+            <c-carousel>
+                <c-carousel-indicators></c-carousel-indicators>
+                <c-carousel-inner>
+                  <c-carousel-item *ngFor="let slide of slides">
+                    <img
+                      alt="{{slide.title}}"
+                      class="d-block w-100"
+                      loading="lazy"
+                      src="{{slide.src}}"
+                    />
+                    <c-carousel-caption class="d-none d-md-block">
+                      
+                      <div class="slideContent">
+                        <span class="title">{{slide.title}}</span>
+                        <span class="eventCount">{{slide.eventCount}} Events</span>
+                        <span class="details"><a routerLink="/performer/{{slide.id}}">Details</a></span>
+                      </div>  
+                    </c-carousel-caption>
+                  </c-carousel-item>
+                </c-carousel-inner>
+                <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+                <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+              </c-carousel>
+          </div>
+      </div>
+    
+</div>
+
+  
+ 

@@ -1,0 +1,23 @@
+
+
+<div class="eventDiv">
+    <div  *ngFor="let performer of performer">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>{{ performer.name}}</mat-card-title>
+              
+            </mat-card-header>
+            <img mat-card-image src="{{performer.image}}" width="368" height="370">
+            <mat-card-actions>
+                <div class="detailDiv">
+                    <span class="bookNow" mat-button><a href="{{performer.url}}">BOOK NOW</a></span>
+                    <span class="venue" mat-button>{{performer.type}}</span>
+                    <span class="bookNow" mat-button id="details"><a routerLink="/performer/{{performer.id}}" >Details</a></span>
+                </div>
+
+              </mat-card-actions>
+          </mat-card>
+          
+      </div>
+      
+</div>

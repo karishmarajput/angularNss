@@ -1,24 +1,15 @@
 <div class="navbar ">
-    <div class="logo" routerLink="/adminDashboard">
-        <img src="/assets/nssLogo.png" width="60" height="60">
-        <p>National Service Scheme</p>
+    <div class="logo" routerLink="/">
+        <img src="https://seatgeek.com/favicon.ico" width="60" height="60">
+        <p>The SeatGeek Platform</p>
     </div>
     <div class="headerData">
-        <div>
-            <a routerLink="/">Home</a>
-        </div>
-        <ng-container *ngIf="isAdminSection">
+
+
+
             <div>
-                <a routerLink="adminDashboard/displayEvents">Events</a>
+                <a routerLink="/performer">Performer</a>
             </div>
-            <div>
-                <a routerLink="adminDashboard/displayVolunteer">Volunteer</a>
-            </div>
-          </ng-container>
-          <ng-container *ngIf="!isAdminSection">
-            <div>
-                <a routerLink="/admin">Admin</a>
-            </div>
-          </ng-container>
+
     </div>
 </div>

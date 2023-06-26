@@ -7,7 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import {MaterialModule} from './material.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './admin/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,15 +18,18 @@ import { DisplayVolunteerComponent } from './admin/display-volunteer/display-vol
 import { DisplayEventComponent } from './admin/display-event/display-event.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpAdminService } from 'src/services/http-admin.service';
-
+import { EventComponent } from './home/event/event.component';
+import { PerformerComponent } from './performer/performer.component';
+import { PerformComponent } from './perform/perform.component';
+import { ReversePipe } from './reverse.pipe';
+import { AuthInterceptorInterceptor } from './auth-interceptor.interceptor';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderInterceptorInterceptor } from './loader-interceptor.interceptor';
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'adminDashboard', component: DashboardComponent, },
-  { path: 'adminDashboard/addEvent', component: AddEventComponent },
-  { path: 'adminDashboard/addVolunteer', component: AddVolunteerComponent },
-  { path: 'adminDashboard/displayVolunteer', component: DisplayVolunteerComponent },
-  { path: 'adminDashboard/displayEvents', component: DisplayEventComponent }
+  { path: 'events/:eventId', component: EventComponent },
+  { path: 'performer', component: PerformComponent },
+  { path: 'performer/:performerId', component: PerformerComponent },
  ];
 @NgModule({
   declarations: [
@@ -41,6 +44,11 @@ const routes: Routes = [
     DisplayVolunteerComponent,
     DisplayEventComponent,
     FooterComponent,
+    EventComponent,
+    PerformerComponent,
+    PerformComponent,
+    ReversePipe,
+    LoaderComponent,
   
   ],
   imports: [
@@ -54,7 +62,15 @@ const routes: Routes = [
     ReactiveFormsModule,
   ],
  exports: [RouterModule],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorInterceptor, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptorInterceptor,
+      multi: true,
+   },
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,25 @@
 
-<div class="eventDivMain">
+<div class="eventDivMain" id="eventDivMain">
     <h2>Events</h2>
+<form>
+  <mat-form-field>
+    <mat-label>venue</mat-label>
+    <mat-select [(ngModel)]="selectedValue" (ngModelChange)="searchAccording()" name="food">
+      <div *ngFor="let venue of venue" >
+        <mat-option  *ngIf="venue.state != null"[value]="venue.state">
+          <div >{{venue.state}}</div>
+          
+        </mat-option>
+      </div>
+
+    </mat-select>
+  </mat-form-field>
+  <p> Selected venue: {{selectedValue}} </p>
+</form>
+
     <div class="eventDiv">
         <div  *ngFor="let event of events">
-            <mat-card class="example-card">
+            <mat-card class="example-card" (click)="openEvent(event.id)">
                 <mat-card-header>
                   <mat-card-title>{{ event.short_title }}</mat-card-title>
                   
@@ -18,6 +34,8 @@
                 </div>
                 <mat-card-content class="matDiv">
                   <span class="bookNow"><a href="{{event.url}}">BOOK NOW</a></span>
+                  <span class="venue">{{event.venue.city}}</span>
+                  <span class="bookNow" id="details"><a routerLink="/events/{{event.id}}" >Details</a></span>
                 </mat-card-content>
               </mat-card>
               

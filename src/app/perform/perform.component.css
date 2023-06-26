@@ -1,0 +1,30 @@
+.eventDiv{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.example-card {
+    width: 370px;
+    height: auto;
+    border: 1px solid black;
+    height: 26rem;
+    margin: 1rem;
+  }
+.bookNow{
+    padding: 1rem;
+    background-color: red;
+    border-radius: 1rem;
+    color: white;
+}
+.bookNow a {
+    color: white;
+    text-decoration: none;
+}
+.detailDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#details{
+    background-color: blueviolet;
+  }

@@ -43,16 +43,40 @@
 .bookNow{
   padding: 1rem;
   background-color: red;
-  line-height: 6;
+  border-radius: 1rem;
   
+}
+.mat-mdc-card-header{
+  min-height: 4rem;
+}
+#details{
+  background-color: blueviolet;
 }
 .matDiv{
   padding: 0;
   text-align: left;
-  padding: 0 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
 
 }
 .bookNow a{
   color: white;
+  line-height: 1.5rem;
   font-weight: 500;
+}
+.venue{
+  text-align: right;
+}
+.eventDiv{
+  padding-bottom: 4rem;
+}
+.loader{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height:100vh ;
 }

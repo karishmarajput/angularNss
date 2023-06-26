@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>{{data.name}}</h1>
+    <div class="container mainDiv">
+        <div>
+            <img src="{{data.image}}"/>
+        </div>
+        <div>
+            <h3>Event Count: {{data.stats.event_count}}</h3>
+            <h3>Type: {{data.type}}</h3>
+            <h3>Popularity: {{data.popularity | percent}}</h3>
+            <h3>Popularity: {{data.score | percent}}</h3>
+        </div>
+    </div>
+</div>
+

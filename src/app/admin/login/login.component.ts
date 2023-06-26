@@ -25,22 +25,10 @@ export class LoginComponent {
   ) {}
   onSubmit(username: string, password: string){
     const credentials = { username: username, password: password };
-    this.HttpAdminService.adminLogin(credentials).subscribe(
-      (response: any) => {
-        if (response.success) {
-          console.log('Login successful!');
-          const token = response.token;
-          console.log(token)
-          localStorage.setItem('authToken', token);
-          this.router.navigate(['/adminDashboard']);
-        } else {
-          console.log('Login failed. Please try again.');
-        }
-      },
-      (error: any) => {
-        console.log('An error occurred during login:', error);
-      }
-  
-  )
-}
+    if(username == 'admin' && password=='admin'){
+      this.router.navigate(['/adminDashboard']);
+    }else{
+      console.log("login Failed")
+    }
+} 
 }
