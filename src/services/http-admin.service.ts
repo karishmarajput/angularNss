@@ -8,7 +8,12 @@ import { environment } from 'src/environment/environment';
 export class HttpAdminService {
 
   constructor(private http: HttpClient) {}
+  postLogin(params:any): Observable<any> {
+    return this.http.post('http://localhost:3000/api/admin/login', params)
+  }
   getEvents(): Observable<any> {
+    const headers = new HttpHeaders().get('Authorization'); 
+    console.log(headers)
     return this.http.get(environment.API_ENDPOINT + 'events?'+'per_page=15&sort=score.desc&page=3')
   }
   getEvent(id:any): Observable<any> {

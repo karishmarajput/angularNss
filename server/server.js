@@ -14,7 +14,9 @@ server.get('/api/events',(req,res,next)=>{
     res.status(200).send(eventData.getEvent)
 })
 const userData = require('../server/data/volunteer')
-
+server.get('/verifyAuth',verifyToken,(req,res)=>{
+    res.send(200).json({success: true})
+})
 server.get('/api/volunteers',(req,res,next)=>{
     res.status(200).send(userData.getVolunteer)
 })

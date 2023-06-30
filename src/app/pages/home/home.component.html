@@ -1,6 +1,7 @@
 
 <div class="eventDivMain" id="eventDivMain">
-    <h2>Events</h2>
+  <div class="eventDivHeader">
+    <h1>Events</h1>
 <form>
   <mat-form-field>
     <mat-label>venue</mat-label>
@@ -14,8 +15,9 @@
 
     </mat-select>
   </mat-form-field>
-  <p> Selected venue: {{selectedValue}} </p>
 </form>
+  </div>
+
 
     <div class="eventDiv">
         <div  *ngFor="let event of events">
@@ -33,7 +35,7 @@
                   </span>
                 </div>
                 <mat-card-content class="matDiv">
-                  <span class="bookNow"><a href="{{event.url}}">BOOK NOW</a></span>
+                  <span class="bookNow"><a href="{{event.url}}"target="_blank">BOOK NOW</a></span>
                   <span class="venue">{{event.venue.city}}</span>
                   <span class="bookNow" id="details"><a routerLink="/events/{{event.id}}" >Details</a></span>
                 </mat-card-content>
