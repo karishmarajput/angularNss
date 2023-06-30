@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpAdminService } from 'src/services/http-admin.service';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,7 +16,7 @@ export class HomeComponent {
   venue: any;
 
   selectedValue: any;
-  constructor(private http: HttpClient,private HttpAdminService: HttpAdminService,){}
+  constructor(private http: HttpClient,private router: Router,private HttpAdminService: HttpAdminService,){}
   ngOnInit() {
     this.getLatestEvents();
     this.getVenues()
@@ -27,6 +28,8 @@ export class HomeComponent {
       catchError((error: any) => {
         console.error('An error occurred:', error);
         alert(error.message)
+        localStorage.setItem('authToken', '');
+        this.router.navigate(['/']);
         return throwError(error);
       })
     ).subscribe((data: any) => {
